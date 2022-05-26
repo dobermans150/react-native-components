@@ -5,4 +5,4 @@ export interface MenuItem {
 }
 
 
-type routeName = 'HomeScreen' | 'Animation101Screen' | 'Animation102Screen';
+type routeName = 'HomeScreen' | 'Animation101Screen' | 'Animation102Screen' | 'SwitchScreen';
