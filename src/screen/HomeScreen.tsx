@@ -6,17 +6,11 @@ import { styles } from '../theme/theme';
 import { FlatListMenuItem } from '../components/FlatListMenuItem';
 import { menuItems } from '../data/menuItems';
 import { HeaderTitle } from '../components/HeaderTitle';
+import { ItemSeparator } from '../components/ItemSeparator';
 
 
 export const HomeScreen = () => {
 
-    const ItemSeparator = () => {
-        return (
-            <View
-                style={{ borderBottomWidth: 1, opacity: 0.4, marginVertical: 5 }}
-            />
-        );
-    };
 
     return (
         <View style={{ flex: 1, ...styles.globalMargin }}>
