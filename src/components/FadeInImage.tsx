@@ -1,14 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { FC, useState } from 'react'
-import { ActivityIndicator, Animated, View } from 'react-native';
+import React, { FC, useState } from 'react';
+import { ActivityIndicator, Animated, ImageStyle, StyleProp, View } from 'react-native';
 import { useAnimation } from '../hooks/useAnimation';
 
 
 interface Props {
     uri: string;
+    style?: StyleProp<ImageStyle>;
 }
 
-export const FadeInImage: FC<Props> = ({ uri }) => {
+export const FadeInImage: FC<Props> = ({ uri, style = {} }) => {
 
     const { opacity, fadeIn } = useAnimation();
     const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,7 @@ export const FadeInImage: FC<Props> = ({ uri }) => {
     const finishLoading = () => {
         setIsLoading(false);
         fadeIn();
-    }
+    };
 
     return (
         <View
@@ -39,8 +40,7 @@ export const FadeInImage: FC<Props> = ({ uri }) => {
                 source={{ uri }}
                 onLoadEnd={finishLoading}
                 style={{
-                    width: '100%',
-                    height: 400,
+                    ...style as any,
                     opacity,
                 }}
             />
